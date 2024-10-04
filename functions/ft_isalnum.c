@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rreimann <rreimann@42heilbronn.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/04 14:25:04 by rreimann          #+#    #+#             */
-/*   Updated: 2024/10/04 14:27:18 by rreimann         ###   ########.fr       */
+/*   Created: 2024/10/04 14:27:36 by rreimann          #+#    #+#             */
+/*   Updated: 2024/10/04 15:16:20 by rreimann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <ctype.h>
-
-int	ft_isdigit(int c)
+int	ft_isalnum(int c)
 {
-	return (c >= '0' && c <= '9');
+	return ((c >= '0' && c <= '9') || \
+	((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')));
 }
 
+// TESTS
+#include <ctype.h>
+#include <stdio.h>
 void	run_tests(char input, int expected)
 {
 	int	result;
 
-	result = ft_isdigit(input);
+	result = ft_isalnum(input);
 	if (result == expected)
 		printf("Test passed!\n");
 	else
@@ -34,24 +35,24 @@ void	run_tests(char input, int expected)
 int	main(void)
 {
 	char	example1 = 'a';
-	int expected1 = isdigit(example1) ? 1 : 0;
+	int expected1 = isalnum(example1) ? 1 : 0;
 	run_tests(example1, expected1);
-
-	char example2 = 'A';
-	int expected2 = isdigit(example2) ? 1 : 0;
+	
+	char	example2 = 'A';
+	int expected2 = isalnum(example2) ? 1 : 0;
 	run_tests(example2, expected2);
 
-	char example3 = '1';
-	int expected3 = isdigit(example3) ? 1 : 0;
+	char	example3 = 'b';
+	int expected3 = isalnum(example3) ? 1 : 0;
 	run_tests(example3, expected3);
 
-	char example4 = '5';
-	int expected4 = isdigit(example4) ? 1 : 0;
+	char	example4 = '5';
+	int expected4 = isalnum(example4) ? 1 : 0;
 	run_tests(example4, expected4);
 
-	char example5 = ' ';
-	int expected5 = isdigit(example5) ? 1 : 0;
+	char	example5 = ' ';
+	int expected5 = isalnum(example5) ? 1 : 0;
 	run_tests(example5, expected5);
 
-	return 0;
+	return (0);
 }
