@@ -1,6 +1,7 @@
 {
     "files.associations": {
         ".eslintrc.json": "json",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "ctype.h": "c"
     }
 }
