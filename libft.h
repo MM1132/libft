@@ -6,13 +6,13 @@
 /*   By: rreimann <rreimann@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 13:05:49 by rreimann          #+#    #+#             */
-/*   Updated: 2024/10/09 13:05:56 by rreimann         ###   ########.fr       */
+/*   Updated: 2024/10/11 00:54:14 by rreimann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 #define LIBFT_H
 
-
+int	ft_isalpha(int c);
 
 #endif
