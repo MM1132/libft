@@ -3,55 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rreimann <rreimann@42heilbronn.de>         +#+  +:+       +#+        */
+/*   By: rreimann <rreimann@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 14:25:04 by rreimann          #+#    #+#             */
-/*   Updated: 2024/10/04 14:27:18 by rreimann         ###   ########.fr       */
+/*   Updated: 2024/10/11 01:01:33 by rreimann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
-#include <ctype.h>
 
 int	ft_isdigit(int c)
 {
 	return (c >= '0' && c <= '9');
-}
-
-void	run_tests(char input, int expected)
-{
-	int	result;
-
-	result = ft_isdigit(input);
-	if (result == expected)
-		printf("Test passed!\n");
-	else
-		printf("Test failed!\n");
-	printf("Input: \"%c\"\n", input);
-	printf("Expected: %d, Got: %d\n\n", expected, result);
-}
-
-int	main(void)
-{
-	char	example1 = 'a';
-	int expected1 = isdigit(example1) ? 1 : 0;
-	run_tests(example1, expected1);
-
-	char example2 = 'A';
-	int expected2 = isdigit(example2) ? 1 : 0;
-	run_tests(example2, expected2);
-
-	char example3 = '1';
-	int expected3 = isdigit(example3) ? 1 : 0;
-	run_tests(example3, expected3);
-
-	char example4 = '5';
-	int expected4 = isdigit(example4) ? 1 : 0;
-	run_tests(example4, expected4);
-
-	char example5 = ' ';
-	int expected5 = isdigit(example5) ? 1 : 0;
-	run_tests(example5, expected5);
-
-	return 0;
 }
