@@ -13,6 +13,7 @@ SRC_FILES=\
 	$(SRC_DIR)/ft_memset.c \
 	$(SRC_DIR)/ft_bzero.c \
 	$(SRC_DIR)/ft_memcpy.c \
+	$(SRC_DIR)/ft_memmove.c \
 
 # We create the list of .o files based on the list of .c files
 OBJ_FILES=$(SRC_FILES:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
