@@ -6,7 +6,7 @@
 /*   By: rreimann <rreimann@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 17:15:11 by rreimann          #+#    #+#             */
-/*   Updated: 2024/10/11 01:15:46 by rreimann         ###   ########.fr       */
+/*   Updated: 2024/10/11 15:08:36 by rreimann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memset(void *dest, int c, size_t count)
 	index = 0;
 	while (index < count)
 	{
-		((int *)dest)[index] = c;
+		((unsigned char *)dest)[index] = (unsigned char)c;
 		index++;
 	}
 	return (dest);
