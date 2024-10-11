@@ -6,11 +6,11 @@
 /*   By: rreimann <rreimann@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 17:15:11 by rreimann          #+#    #+#             */
-/*   Updated: 2024/10/11 15:08:36 by rreimann         ###   ########.fr       */
+/*   Updated: 2024/10/11 15:30:46 by rreimann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "../libft.h"
 
 void	*ft_memset(void *dest, int c, size_t count)
 {

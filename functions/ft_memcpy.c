@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rreimann <rreimann@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/04 16:25:29 by rreimann          #+#    #+#             */
-/*   Updated: 2024/10/11 15:30:59 by rreimann         ###   ########.fr       */
+/*   Created: 2024/10/11 15:32:41 by rreimann          #+#    #+#             */
+/*   Updated: 2024/10/11 16:01:26 by rreimann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-size_t	ft_strlen(const char *string)
+// copies n bytes from memory area src to memory area dst, returns dst
+void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 {
-	int	length;
+	unsigned char		*d;
+	const unsigned char	*s;
+	size_t				index;
 
-	length = 0;
-	while (string[length])
+	if (!dst && !src)
+		return (dst);
+	d = (unsigned char *)dst;
+	s = (const unsigned char *)src;
+	index = 0;
+	while (index < n)
 	{
-		length++;
+		d[index] = s[index];
+		index++;
 	}
-	return (length);
+	return (dst);
 }

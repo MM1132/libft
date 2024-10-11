@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rreimann <rreimann@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/09 13:05:49 by rreimann          #+#    #+#             */
-/*   Updated: 2024/10/11 15:46:18 by rreimann         ###   ########.fr       */
+/*   Created: 2024/10/11 15:22:45 by rreimann          #+#    #+#             */
+/*   Updated: 2024/10/11 15:30:23 by rreimann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-# include <string.h>
+#include "../libft.h"
 
-int		ft_isalpha(int c);
-int		ft_isdigit(int c);
-int		ft_isalnum(int c);
-int		ft_isascii(int c);
-int		ft_isprint(int c);
-size_t	ft_strlen(const char *string);
-void	*ft_memset(void *dest, int c, size_t count);
-void	ft_bzero(void *s, size_t n);
-void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n);
-
-#endif
+void	ft_bzero(void *s, size_t n)
+{
+	ft_memset(s, 0, n);
+}
