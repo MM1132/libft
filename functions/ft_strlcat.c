@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rreimann <rreimann@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/11 15:32:41 by rreimann          #+#    #+#             */
-/*   Updated: 2024/10/12 15:14:51 by rreimann         ###   ########.fr       */
+/*   Created: 2024/10/12 15:13:50 by rreimann          #+#    #+#             */
+/*   Updated: 2024/10/12 16:27:24 by rreimann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-// copies n bytes from memory area src to memory area dst, returns dst
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	unsigned char		*d;
-	const unsigned char	*s;
-	size_t				index;
+	size_t	index;
+	size_t	second_index;
 
-	if (!dst && !src)
-		return (dst);
-	d = (unsigned char *)dst;
-	s = (const unsigned char *)src;
 	index = 0;
-	while (index < n)
-	{
-		d[index] = s[index];
+	while (dst[index] != 0 && index < dstsize)
 		index++;
+	if (index == dstsize)
+		return (index + ft_strlen(src));
+	second_index = 0;
+	while (src[second_index] != 0 && index + second_index < dstsize - 1)
+	{
+		dst[index + second_index] = src[second_index];
+		second_index++;
 	}
-	return (dst);
+	dst[index + second_index] = 0;
+	return (index + ft_strlen(src));
 }
