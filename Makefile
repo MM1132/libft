@@ -20,6 +20,7 @@ SRC_FILES=\
 	$(SRC_DIR)/ft_tolower.c \
 	$(SRC_DIR)/ft_strchr.c \
 	$(SRC_DIR)/ft_strrchr.c \
+	$(SRC_DIR)/ft_strncmp.c \
 
 # We create the list of .o files based on the list of .c files
 OBJ_FILES=$(SRC_FILES:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
