@@ -24,6 +24,7 @@ SRC_FILES=\
 	$(SRC_DIR)/ft_memchr.c \
 	$(SRC_DIR)/ft_memcmp.c \
 	$(SRC_DIR)/ft_strnstr.c \
+	$(SRC_DIR)/ft_atoi.c \
 
 # We create the list of .o files based on the list of .c files
 OBJ_FILES=$(SRC_FILES:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
