@@ -1,24 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rreimann <rreimann@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/13 19:52:36 by rreimann          #+#    #+#             */
-/*   Updated: 2024/10/13 20:25:09 by rreimann         ###   ########.fr       */
+/*   Created: 2024/10/13 20:18:28 by rreimann          #+#    #+#             */
+/*   Updated: 2024/10/13 20:24:05 by rreimann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+char	*ft_strdup(const char *s1)
 {
-	void	*memory;
+	char	*new_string;
+	size_t	string_length;
+	size_t	index;
 
-	memory = malloc(count * size);
-	if (memory == NULL)
+	string_length = ft_strlen(s1);
+	new_string = malloc((string_length + 1) * (sizeof(char)));
+	if (new_string == NULL)
 		return (NULL);
-	ft_bzero(memory, count * size);
-	return (memory);
+	index = 0;
+	while (index < string_length)
+	{
+		new_string[index] = s1[index];
+		index++;
+	}
+	new_string[index] = 0;
+	return (new_string);
 }
