@@ -34,6 +34,7 @@ SRC_FILES=\
 	$(SRC_DIR)/ft_itoa.c \
 	$(SRC_DIR)/ft_strmapi.c \
 	$(SRC_DIR)/ft_striteri.c \
+	$(SRC_DIR)/ft_putchar_fd.c \
 
 # We create the list of .o files based on the list of .c files
 OBJ_FILES=$(SRC_FILES:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
