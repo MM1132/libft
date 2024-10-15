@@ -43,6 +43,7 @@ BONUS_FILES=\
 	ft_lstadd_front.c \
 	ft_lstsize.c \
 	ft_lstlast.c \
+	ft_lstadd_back.c \
 
 # We create the list of .o files based on the list of .c files
 MAIN_OBJ_FILES=$(MAIN_FILES:%.c=$(OBJ_DIR)/%.o)
