@@ -6,11 +6,11 @@
 /*   By: rreimann <rreimann@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 16:05:40 by rreimann          #+#    #+#             */
-/*   Updated: 2024/10/14 16:57:42 by rreimann         ###   ########.fr       */
+/*   Updated: 2024/10/15 14:57:49 by rreimann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 // copies len bytes from string src to string dst
 void	*ft_memmove(void *dst, const void *src, size_t len)

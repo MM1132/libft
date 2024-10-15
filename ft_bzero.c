@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rreimann <rreimann@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/14 17:51:51 by rreimann          #+#    #+#             */
-/*   Updated: 2024/10/14 17:55:44 by rreimann         ###   ########.fr       */
+/*   Created: 2024/10/11 15:22:45 by rreimann          #+#    #+#             */
+/*   Updated: 2024/10/15 14:57:49 by rreimann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+void	ft_bzero(void *s, size_t n)
 {
-	while (*s != 0)
-		ft_putchar_fd(*s++, fd);
+	ft_memset(s, 0, n);
 }

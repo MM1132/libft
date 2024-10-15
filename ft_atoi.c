@@ -6,11 +6,11 @@
 /*   By: rreimann <rreimann@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 19:29:16 by rreimann          #+#    #+#             */
-/*   Updated: 2024/10/13 19:51:08 by rreimann         ###   ########.fr       */
+/*   Updated: 2024/10/15 14:57:14 by rreimann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 int	ft_isspace(char c)
 {

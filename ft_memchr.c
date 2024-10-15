@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rreimann <rreimann@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/11 17:43:30 by rreimann          #+#    #+#             */
-/*   Updated: 2024/10/12 15:11:47 by rreimann         ###   ########.fr       */
+/*   Created: 2024/10/13 11:08:13 by rreimann          #+#    #+#             */
+/*   Updated: 2024/10/15 14:57:49 by rreimann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t	src_len;
-	size_t	index;
+	size_t			index;
+	unsigned char	*str;
+	unsigned char	char_to_find;
 
-	src_len = 0;
-	while (src[src_len] != 0)
-		src_len++;
-	if (dstsize == 0)
-		return (src_len);
+	str = (unsigned char *)s;
+	char_to_find = (unsigned char)c;
 	index = 0;
-	while (src[index] != 0 && index < dstsize - 1)
+	while (index < n)
 	{
-		dst[index] = src[index];
+		if (str[index] == char_to_find)
+		{
+			return (&(((void *)str)[index]));
+		}
 		index++;
 	}
-	dst[index] = 0;
-	return (src_len);
+	return (NULL);
 }

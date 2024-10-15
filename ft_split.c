@@ -6,11 +6,11 @@
 /*   By: rreimann <rreimann@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 11:36:48 by rreimann          #+#    #+#             */
-/*   Updated: 2024/10/14 14:24:56 by rreimann         ###   ########.fr       */
+/*   Updated: 2024/10/15 14:57:49 by rreimann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 // "    aaa   aaaaaaaaa  a a"
 int	count_words(char const *s, char c)

@@ -6,11 +6,11 @@
 /*   By: rreimann <rreimann@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 15:13:50 by rreimann          #+#    #+#             */
-/*   Updated: 2024/10/12 16:27:24 by rreimann         ###   ########.fr       */
+/*   Updated: 2024/10/15 14:57:49 by rreimann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {

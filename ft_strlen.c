@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rreimann <rreimann@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/13 19:52:36 by rreimann          #+#    #+#             */
-/*   Updated: 2024/10/13 20:25:09 by rreimann         ###   ########.fr       */
+/*   Created: 2024/10/04 16:25:29 by rreimann          #+#    #+#             */
+/*   Updated: 2024/10/15 14:57:49 by rreimann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+size_t	ft_strlen(const char *string)
 {
-	void	*memory;
+	int	length;
 
-	memory = malloc(count * size);
-	if (memory == NULL)
-		return (NULL);
-	ft_bzero(memory, count * size);
-	return (memory);
+	length = 0;
+	while (string[length])
+	{
+		length++;
+	}
+	return (length);
 }

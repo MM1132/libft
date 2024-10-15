@@ -1,31 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rreimann <rreimann@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/13 11:18:25 by rreimann          #+#    #+#             */
-/*   Updated: 2024/10/13 11:23:57 by rreimann         ###   ########.fr       */
+/*   Created: 2024/10/14 17:58:29 by rreimann          #+#    #+#             */
+/*   Updated: 2024/10/15 14:57:49 by rreimann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+void	print_nbr_recursive(int n, int fd)
 {
-	unsigned char	*p_str1;
-	unsigned char	*p_str2;
-
-	p_str1 = (unsigned char *)s1;
-	p_str2 = (unsigned char *)s2;
-	while (n > 0)
+	if (n / 10 != 0)
 	{
-		if (*p_str1 != *p_str2)
-			return (*p_str1 - *p_str2);
-		n--;
-		p_str1++;
-		p_str2++;
+		print_nbr_recursive(n / 10, fd);
 	}
-	return (0);
+	ft_putchar_fd((n % 10) + 48, fd);
 }
+
+void	ft_putnbr_fd(int n, int fd)
+{
+	if (n == -2147483648)
+	{
+		ft_putstr_fd("-2147483648", fd);
+		return ;
+	}
+	if (n < 0)
+	{
+		ft_putstr_fd("-", fd);
+		n *= -1;
+	}
+	print_nbr_recursive(n, fd);
+}
+
+// TESTS
+
+// int	main(void)
+// {
+// 	ft_putnbr_fd(2147483647, 1);
+// }

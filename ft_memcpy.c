@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rreimann <rreimann@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/14 17:26:36 by rreimann          #+#    #+#             */
-/*   Updated: 2024/10/14 17:42:23 by rreimann         ###   ########.fr       */
+/*   Created: 2024/10/11 15:32:41 by rreimann          #+#    #+#             */
+/*   Updated: 2024/10/15 14:57:49 by rreimann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+// copies n bytes from memory area src to memory area dst, returns dst
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	char	*new_string;
-	size_t	index;
-	size_t	str_len;
+	unsigned char		*d;
+	const unsigned char	*s;
+	size_t				index;
 
-	str_len = ft_strlen(s);
-	new_string = (char *)malloc((str_len + 1) * sizeof(char));
-	if (new_string == NULL)
-		return (NULL);
+	if (!dst && !src)
+		return (dst);
+	d = (unsigned char *)dst;
+	s = (const unsigned char *)src;
 	index = 0;
-	while (index < str_len)
+	while (index < n)
 	{
-		new_string[index] = f(index, s[index]);
+		d[index] = s[index];
 		index++;
 	}
-	new_string[index] = 0;
-	return (new_string);
+	return (dst);
 }

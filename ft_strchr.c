@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rreimann <rreimann@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/11 15:32:41 by rreimann          #+#    #+#             */
-/*   Updated: 2024/10/12 15:14:51 by rreimann         ###   ########.fr       */
+/*   Created: 2024/10/12 16:38:31 by rreimann          #+#    #+#             */
+/*   Updated: 2024/10/15 14:57:49 by rreimann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
-// copies n bytes from memory area src to memory area dst, returns dst
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+char	*ft_strchr(const char *s, int c)
 {
-	unsigned char		*d;
-	const unsigned char	*s;
-	size_t				index;
+	int		index;
+	char	converted_character;
 
-	if (!dst && !src)
-		return (dst);
-	d = (unsigned char *)dst;
-	s = (const unsigned char *)src;
+	converted_character = (char)c;
 	index = 0;
-	while (index < n)
+	while (s[index] != 0 || s[index] == converted_character)
 	{
-		d[index] = s[index];
+		if (s[index] == converted_character)
+		{
+			return (&((char *)s)[index]);
+		}
 		index++;
 	}
-	return (dst);
+	return (NULL);
 }

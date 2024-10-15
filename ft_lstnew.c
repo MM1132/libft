@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rreimann <rreimann@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/13 11:08:13 by rreimann          #+#    #+#             */
-/*   Updated: 2024/10/13 11:17:33 by rreimann         ###   ########.fr       */
+/*   Created: 2024/10/15 15:00:51 by rreimann          #+#    #+#             */
+/*   Updated: 2024/10/15 15:24:07 by rreimann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+t_list	*ft_lstnew(void *content)
 {
-	size_t			index;
-	unsigned char	*str;
-	unsigned char	char_to_find;
+	struct s_list	*allocated_memory;
 
-	str = (unsigned char *)s;
-	char_to_find = (unsigned char)c;
-	index = 0;
-	while (index < n)
-	{
-		if (str[index] == char_to_find)
-		{
-			return (&(((void *)str)[index]));
-		}
-		index++;
-	}
-	return (NULL);
+	allocated_memory = malloc(sizeof(struct s_list));
+	if (allocated_memory == NULL)
+		return (NULL);
+	allocated_memory->content = content;
+	allocated_memory->next = NULL;
+	return (allocated_memory);
 }
