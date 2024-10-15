@@ -6,7 +6,7 @@
 /*   By: rreimann <rreimann@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 13:05:49 by rreimann          #+#    #+#             */
-/*   Updated: 2024/10/15 15:40:03 by rreimann         ###   ########.fr       */
+/*   Updated: 2024/10/15 18:47:08 by rreimann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,6 @@ void	ft_putnbr_fd(int n, int fd);
 // BONUS
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
+int		ft_lstsize(t_list *lst);
 
 #endif
