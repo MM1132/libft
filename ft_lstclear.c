@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rreimann <rreimann@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/15 18:52:44 by rreimann          #+#    #+#             */
-/*   Updated: 2024/10/16 09:44:20 by rreimann         ###   ########.fr       */
+/*   Created: 2024/10/15 20:53:10 by rreimann          #+#    #+#             */
+/*   Updated: 2024/10/16 10:17:34 by rreimann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// Dogukaan
-// If they give you an empty list, you must set it as the first element
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void	free_list_recursive(t_list *lst, void (*del)(void *))
 {
-	if (!lst || !new)
+	if (lst == NULL)
 		return ;
-	if (!*lst)
-	{
-		*lst = new;
-		return ;
-	}
-	ft_lstlast(*lst)->next = new;
+	if (lst->next != NULL)
+		free_list_recursive(lst->next, del);
+	ft_lstdelone(lst, del);
+}
+
+void	ft_lstclear(t_list **lst, void (*del)(void *))
+{
+	free_list_recursive(*lst, del);
+	*lst = NULL;
 }
 
 // t_list	*create_item(void *content, t_list *next)
@@ -45,6 +46,9 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 // 		print_list_content((list)->next);
 // }
 
+// void	del_function(void *something)
+// {}
+
 // int	main(void)
 // {
 // 	t_list	*item_1 = create_item("item 1 content", NULL);
@@ -62,6 +66,8 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 
 // 	ft_lstadd_back(list_of_lists, create_item("added item's content", NULL));
 // 	ft_lstadd_back(list_of_lists, create_item("another addition", NULL));
+
+// 	ft_lstclear(&list_of_lists[2], del_function);
 
 // 	print_list_content(item_4);
 
