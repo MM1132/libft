@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS= -Wall -Wextra -Werror -I./ft_printf -I.
+CFLAGS= -Wall -Wextra -Werror -Iinclude
 NAME=libft.a
 OBJ_DIR=obj
 

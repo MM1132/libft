@@ -6,7 +6,7 @@
 /*   By: rreimann <rreimann@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 13:05:49 by rreimann          #+#    #+#             */
-/*   Updated: 2024/11/22 15:33:01 by rreimann         ###   ########.fr       */
+/*   Updated: 2024/11/23 10:31:58 by rreimann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ typedef struct s_list
 }	t_list;
 
 // Printf
-int	ft_printf(const char *format, ...);
+int		ft_printf(const char *format, ...);
 
 // PART 1
 int		ft_isalpha(int c);
