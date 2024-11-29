@@ -48,7 +48,13 @@ MAIN_FILES=\
 	ft_printf/print_functions/print_nbr_format.c \
 	ft_printf/print_functions/print_pointer_format.c \
 	ft_printf/print_functions/print_string_format.c \
-	ft_printf/print_functions/print_unsigned_format.c
+	ft_printf/print_functions/print_unsigned_format.c \
+	get_next_line/get_next_line.c \
+	get_next_line/get_next_line_utils.c \
+	ft_isspace.c \
+	ft_list_atoi.c \
+	ft_sqrt.c \
+	ft_isdigit_str.c
 
 BONUS_FILES=\
 	ft_lstnew.c \

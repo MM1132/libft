@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   put_hex.c                                          :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rreimann <rreimann@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/22 20:49:21 by rreimann          #+#    #+#             */
-/*   Updated: 2024/11/27 16:25:31 by rreimann         ###   ########.fr       */
+/*   Created: 2024/11/25 15:10:47 by rreimann          #+#    #+#             */
+/*   Updated: 2024/11/25 15:10:58 by rreimann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-
-#define G_LOWERCASE_HEX_BASE "0123456789abcdef"
-#define G_UPPERCASE_HEX_BASE "0123456789ABCDEF"
-
-int	put_lowercase_hex(unsigned long n)
+int	ft_isspace(char c)
 {
-	return (put_nbr_base(n, G_LOWERCASE_HEX_BASE));
-}
-
-int	put_uppercase_hex(unsigned long n)
-{
-	return (put_nbr_base(n, G_UPPERCASE_HEX_BASE));
+	return (
+		c == '\t' || \
+		c == '\n' || \
+		c == '\v' || \
+		c == '\f' || \
+		c == '\r' || \
+		c == ' '
+	);
 }

@@ -6,28 +6,16 @@
 /*   By: rreimann <rreimann@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 19:29:16 by rreimann          #+#    #+#             */
-/*   Updated: 2024/10/15 14:57:14 by rreimann         ###   ########.fr       */
+/*   Updated: 2024/11/27 16:33:11 by rreimann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isspace(char c)
+long	ft_atoi(const char *str)
 {
-	return (
-		c == '\t' || \
-		c == '\n' || \
-		c == '\v' || \
-		c == '\f' || \
-		c == '\r' || \
-		c == ' '
-	);
-}
-
-int	ft_atoi(const char *str)
-{
-	int	output;
-	int	multiplier;
+	long	output;
+	long	multiplier;
 
 	while (ft_isspace(*str))
 		str++;

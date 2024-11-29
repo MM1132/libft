@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   put_hex.c                                          :+:      :+:    :+:   */
+/*   ft_list_atoi.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rreimann <rreimann@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/22 20:49:21 by rreimann          #+#    #+#             */
-/*   Updated: 2024/11/27 16:25:31 by rreimann         ###   ########.fr       */
+/*   Created: 2024/11/25 15:09:25 by rreimann          #+#    #+#             */
+/*   Updated: 2024/11/25 15:21:42 by rreimann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-#define G_LOWERCASE_HEX_BASE "0123456789abcdef"
-#define G_UPPERCASE_HEX_BASE "0123456789ABCDEF"
-
-int	put_lowercase_hex(unsigned long n)
+int	*ft_list_atoi(char **numbers)
 {
-	return (put_nbr_base(n, G_LOWERCASE_HEX_BASE));
-}
+	int	*results;
+	int	index;
 
-int	put_uppercase_hex(unsigned long n)
-{
-	return (put_nbr_base(n, G_UPPERCASE_HEX_BASE));
+	index = 0;
+	while (numbers[index] != NULL)
+		index++;
+	results = malloc(sizeof(int) * (index + 1));
+	if (results == NULL)
+		return (NULL);
+	index = 0;
+	while (numbers[index] != NULL)
+	{
+		results[index] = ft_atoi(numbers[index]);
+		index++;
+	}
+	results[index] = 0;
+	return (results);
 }

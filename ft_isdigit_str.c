@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   put_hex.c                                          :+:      :+:    :+:   */
+/*   ft_isdigit_str.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rreimann <rreimann@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/22 20:49:21 by rreimann          #+#    #+#             */
-/*   Updated: 2024/11/27 16:25:31 by rreimann         ###   ########.fr       */
+/*   Created: 2024/11/27 12:31:35 by rreimann          #+#    #+#             */
+/*   Updated: 2024/11/28 15:26:25 by rreimann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-#define G_LOWERCASE_HEX_BASE "0123456789abcdef"
-#define G_UPPERCASE_HEX_BASE "0123456789ABCDEF"
-
-int	put_lowercase_hex(unsigned long n)
+int	ft_isdigit_str(char *str)
 {
-	return (put_nbr_base(n, G_LOWERCASE_HEX_BASE));
-}
+	int	index;
 
-int	put_uppercase_hex(unsigned long n)
-{
-	return (put_nbr_base(n, G_UPPERCASE_HEX_BASE));
+	index = 0;
+	while (str[index] != 0)
+	{
+		if (ft_isdigit((int)(str[index])) || \
+			str[index] == '-' || str[index] == '+')
+		{
+			index++;
+			continue ;
+		}
+		return (0);
+	}
+	return (1);
 }
