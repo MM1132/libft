@@ -6,7 +6,7 @@
 /*   By: rreimann <rreimann@student.42heilbronn.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 13:05:49 by rreimann          #+#    #+#             */
-/*   Updated: 2024/11/27 16:33:33 by rreimann         ###   ########.fr       */
+/*   Updated: 2025/01/21 14:39:09 by rreimann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,10 @@ void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *s1);
 
 // PART 2
+// Create a new string rom the string passed
+// s: the string, 
+// start: starting index, 
+// len: the maximum length of the cut out string
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
@@ -77,9 +81,14 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 // MY FUNCTIONS
+// If the character is one of those: '\t', '\n', '\v', '\f', '\r', ' '
 int		ft_isspace(char c);
+// Convert an allocated array of ascii numbers to
+// An allocated array of integer numbers
 int		*ft_list_atoi(char **numbers);
+// Find the closest square root of the number passed
 int		ft_sqrt(int nb);
+// If the string only contains numbers or + - signs
 int		ft_isdigit_str(char *str);
 
 #endif
