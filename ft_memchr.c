@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rreimann <rreimann@student.42heilbronn.de> +#+  +:+       +#+        */
+/*   By: rreimann <rreimann@42heilbronn.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 11:08:13 by rreimann          #+#    #+#             */
-/*   Updated: 2024/10/15 14:57:49 by rreimann         ###   ########.fr       */
+/*   Updated: 2025/02/28 01:41:12 by rreimann         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	while (index < n)
 	{
 		if (str[index] == char_to_find)
-		{
-			return (&(((void *)str)[index]));
-		}
+			return (((void *)&(str[index])));
 		index++;
 	}
 	return (NULL);
